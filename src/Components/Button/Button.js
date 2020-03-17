@@ -23,6 +23,7 @@ const Button = styled(Link)`
   ); */
   border-width: 1px;
   border-style: solid;
+  border-color:transparent;
   &.empty {
     background-image: none;
     background-color: transparent;
@@ -53,6 +54,7 @@ const Button = styled(Link)`
       margin-right:20px;
     }
   }
+  margin:${props => (props.center ? "10px auto" : null)};
   
 `
 

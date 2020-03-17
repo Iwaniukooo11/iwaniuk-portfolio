@@ -9,7 +9,7 @@ import LeftCard from "../Components/LeftCard/LeftCard"
 
 const GlobalStyle = createGlobalStyle`
 /* @import './Layout.scss'; */
-*,*::after,*::before,h1,h2,h3,h4,p,a,span,button{
+*,*::after,*::before,h1,h2,h3,h4,p,a,span,button,input,textarea{
     margin:0;
     padding:0;
     box-sizing: border-box;
@@ -30,7 +30,7 @@ body{
     font-family: 'Poppins', sans-serif;
     font-weight:300;
 }
-button{
+button,input,textarea{
   outline:none;
   font:inherit;
 }
@@ -70,6 +70,9 @@ const Container = styled.main`
       row-gap: 20px;
       /* padding-left: calc(450px + (100% - 850px - 300px) / 2); */
     }
+  }
+  &.contact {
+    grid-template-areas: "header" "desc" "inputs";
   }
 `
 
