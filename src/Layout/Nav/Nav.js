@@ -53,7 +53,8 @@ const Element = styled.li`
   }
   .active {
     color: ${({ theme }) => theme.color_theme_a};
-    font-weight: bold;
+    /* font-weight: bold; */
+    text-shadow: 1px 0 0 ${({ theme }) => theme.color_theme_a};
   }
 `
 
