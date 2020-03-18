@@ -140,7 +140,7 @@ const ButtonWrap = styled.div`
   justify-content: space-evenly;
   overflow: hidden;
 `
-const Link = styled.a`
+const Article = styled.article`
   transition: 0.5s;
   position: relative;
   display: flex;
@@ -191,19 +191,19 @@ const Projects = props => {
       <List>
         {images.map((el, i) => (
           <Li bg={el.img} index={i + 1}>
-            <Link href="#">
+            <Article>
               <ButtonWrap className="button-wrap">
                 <StyledButton empty left>
-                  test
+                  live
                 </StyledButton>
                 <StyledButton empty right>
-                  test
+                  code
                 </StyledButton>
               </ButtonWrap>
               <MiniHead className="minihead">{el.title}</MiniHead>
               <Technology className="technology">{el.tech}</Technology>
               {/* <Img className="img" src={el.img} alt={el.title} /> */}
-            </Link>
+            </Article>
           </Li>
         ))}
       </List>

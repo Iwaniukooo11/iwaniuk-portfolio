@@ -135,6 +135,7 @@ const Layout = props => {
       <>
         <GlobalStyle />
         <Helmet>
+          <html prefix="og: http://ogp.me/ns#" />
           <link
             href="https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap&subset=latin-ext"
             rel="stylesheet"
@@ -149,6 +150,17 @@ const Layout = props => {
             integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
             crossorigin="anonymous"
           />
+          <meta name="viewport" content="width=device-width,initial-scale=1" />
+          <meta property="og:title" content="Mateusz Iwaniuk Portfolio" />
+          <meta name="author" content="Mateusz Iwaniuk" />
+          <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+          <meta name="description" content="Miejsce na opis" />
+          <meta
+            name="keywords"
+            content="Iwaniuk,Trailblazer,Cansat,Mateusz,Programista,Bydgoszcz,Frontend,front-end"
+          />
+          <meta property="og:image" content="icons/background.jpg" />
+          <meta propety="og:description" property="Miejsce na opis" />
         </Helmet>
         <SVG />
         <Navigation content={theme.content} />
