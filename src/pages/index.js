@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Layout from "../Layout/Layout"
 import Header from "../Components/Header/Header"
 import Desc from "../Components/Desc/Desc"
@@ -67,9 +66,33 @@ const IndexPage = props => (
       eligendi odit.
     </Desc>
     <ButtonWrapper>
-      <Button pos={"pos-left"}>Projekty</Button>
-      <Button empty pos={"pos-right"}>
-        Kontakt
+      <Button
+        pos={"pos-left"}
+        as={"span"}
+        // to={"o-mnie"}
+      >
+        <AniLink
+          cover
+          // duration={5}
+          direction="right"
+          bg="#fff"
+          // bg="#10A4A6"
+          to={`/o-mnie`}
+        >
+          O mnie
+        </AniLink>
+      </Button>
+      <Button empty pos={"pos-right"} to={"projekty"}>
+        <AniLink
+          cover
+          // duration={5}
+          direction="right"
+          bg="#fff"
+          // bg="#10A4A6"
+          to={`/projekty`}
+        >
+          projekty
+        </AniLink>
       </Button>
     </ButtonWrapper>
   </Layout>

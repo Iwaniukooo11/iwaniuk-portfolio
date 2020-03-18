@@ -152,12 +152,12 @@ const Layout = props => {
         </Helmet>
         <SVG />
         <Navigation content={theme.content} />
-        <TransitionPortal>
-          <LeftCard content={theme.content} />
-        </TransitionPortal>
         <Container className={props.page} content={theme.content}>
           {props.children}
         </Container>
+        <TransitionPortal>
+          <LeftCard content={theme.content} />
+        </TransitionPortal>
       </>
     </ThemeProvider>
   )

@@ -60,14 +60,36 @@ const Li = styled.li`
   height: calc(${ratio} * 72vw);
   margin: 5px auto;
   box-shadow: 20px 0 35px rgba(0, 0, 0, 0.25);
-  opacity: 0.95;
+  /* opacity: 0.95; */
+  opacity:0;
+  animation:scale 1s ${props => props.index * 300}ms both;
+
+  @keyframes scale{
+    from{
+      transform:scale(0.1);
+      opacity:0;
+    /* opacity:0.3; */
+
+    }
+    75%{
+      /* transform:scale(1.2); */
+    }
+    99%{
+      /* opacity:0.3; */
+    }
+    to{
+      opacity:0.8;
+      transform:scale(1);
+    }
+  }
+
   @media (min-width: 768px) {
     width: 350px;
     height: calc(${ratio} * 350px);
   }
   @media (min-width: 1200px) {
     margin: 0px;
-    opacity: 0.7;
+    opacity: 0.8;
     width: 25vw;
     height: calc(${ratio} * 25vw);
   }
@@ -167,8 +189,8 @@ const Projects = props => {
         explicabo culpa excepturi quod, enim quas sint esse eligendi sed facere?
       </Desc>
       <List>
-        {images.map(el => (
-          <Li bg={el.img}>
+        {images.map((el, i) => (
+          <Li bg={el.img} index={i + 1}>
             <Link href="#">
               <ButtonWrap className="button-wrap">
                 <StyledButton empty left>

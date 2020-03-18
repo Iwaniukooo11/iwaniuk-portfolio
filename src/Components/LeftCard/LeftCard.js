@@ -2,9 +2,19 @@ import React from "react"
 import Desc from "../Desc/Desc"
 import styled from "styled-components"
 
+const socials = [
+  {
+    name: "Github",
+    icon: "fab fa-github",
+    link: "https://github.com/Iwaniukooo11",
+  },
+  { name: "LinkedIn", icon: "fab fa-linkedin-in", link: "" },
+  { name: "Dev.to", icon: "fab fa-dev", link: "https://dev.to/iwaniukooo11" },
+  // { name: "Facebook", icon: "fab fa-facebook", link: "#" },
+]
+
 const Card = styled.section`
   width: 37%;
-  /* min-height: 100vh; */
   display: none;
   height: 100%;
   position: fixed;
@@ -40,6 +50,23 @@ const Bold = styled.b`
   grid-area: bold;
 `
 
+const Icon = styled.i`
+  font-size: 23px;
+  margin-right: 20px;
+  transition: 0.3s;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
+`
+const IconWrap = styled.div`
+  margin-top: 10px;
+  grid-area: "desc";
+  display: flex;
+  /* justify-content: space-evenly; */
+`
+
 const LeftCard = props => {
   console.log(props)
   return (
@@ -48,10 +75,19 @@ const LeftCard = props => {
         {props.content.contact.data.map(el => (
           <Element key={el.key}>
             <Bold>{el.key}</Bold>
-
             <Desc white>{el.value}</Desc>
           </Element>
         ))}
+        <Element>
+          <Bold>Znajdź mnie:</Bold>
+          <IconWrap>
+            {socials.map(el => (
+              <a href={el.link} target="_blank">
+                <Icon className={el.icon} />
+              </a>
+            ))}
+          </IconWrap>
+        </Element>
       </List>
     </Card>
   )
