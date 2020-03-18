@@ -4,7 +4,7 @@ const Desc = styled.p.attrs(props => ({
   className: "desc",
 }))`
   font-size: 16px;
-  max-width: 440px;
+  max-width: 630px;
   line-height: 1.7;
   color: ${props =>
     props.white

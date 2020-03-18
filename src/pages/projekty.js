@@ -16,14 +16,15 @@ const List = styled.ul`
   flex-wrap: wrap;
   grid-area: list;
   align-items: center;
+  justify-content: center;
+  margin-right: auto;
+  @media (min-width: 1200px) {
+    justify-content: flex-start;
+  }
 `
 const ratio = 0.67
 
 const Img = styled.img`
-  /* width: 350px;
-  height: 250px; */
-  /* width: 262.5px;
-  height: 187.5px; */
   width: 72vw;
   height: calc(${ratio} * 72vw);
   object-fit: cover;
@@ -33,14 +34,22 @@ const Img = styled.img`
   opacity: 0.95;
   @media (min-width: 768px) {
     width: 350px;
-    height: 250px;
+    /* height: 250px; */
+    height: calc(${ratio} * 350px);
+  }
+  @media (min-width: 1200px) {
+    margin: 0px;
+    opacity: 0.7;
+    /* width: 400px;
+    height: calc(${ratio} * 400px); */
+    width: 25vw;
+    height: calc(${ratio} * 25vw);
   }
 `
 const Li = styled.li`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @media (min-width: 1200px) {
+    background-color: ${({ theme }) => theme.color_theme_b};
+  }
 `
 
 const Projects = props => {

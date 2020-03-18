@@ -16,6 +16,7 @@ const gallery = [[cansat_1, cansat_2], []]
 
 const Ul = styled.ul`
   margin-top: 30px;
+  /* gra */
 `
 const Li = styled.li``
 
@@ -27,7 +28,6 @@ const Img = styled.img`
   border-radius: 20px;
   margin: 15px 20px;
   box-shadow: 10px 0 35px rgba(75, 97, 157, 0.65);
-  /* box-shadow: 10px 0 35px rgba(16, 164, 166, 0.5); */
 `
 const ImagesWrap = styled.div`
   grid-area: images;

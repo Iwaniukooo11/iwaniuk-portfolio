@@ -62,6 +62,8 @@ const Img = styled.img`
   @media (min-width: 1200px) {
     width: 200px;
     height: 96px;
+    /* margin: 3px 20px; */
+    margin: 20px 0;
   }
 `
 const ImagesWrap = styled.div`
@@ -70,6 +72,7 @@ const ImagesWrap = styled.div`
   flex-wrap: wrap;
   width: 100%;
   max-width: 500px;
+  /* padding:20px 0; */
 `
 
 const Example = props => {
