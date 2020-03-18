@@ -76,6 +76,7 @@ const ButtonFC = props => {
         props.empty && "empty",
         props.bord_white && "white-bord",
         props.pos ?? "",
+        props.project && "project",
       ].join(" ")}
       {...props}
     >
