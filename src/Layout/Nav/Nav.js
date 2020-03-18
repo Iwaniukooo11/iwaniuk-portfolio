@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import styled from "styled-components"
+import Desc from "../../Components/Desc/Desc"
 
 import Burger from "../Burger/Burger"
 
@@ -60,7 +62,6 @@ const Element = styled.li`
 
 const Navigation = props => {
   const [isActive, setIsActive] = useState(false)
-  console.log(isActive)
 
   return (
     <>
@@ -72,9 +73,19 @@ const Navigation = props => {
         <List>
           {props.content.navigation.data.map(el => (
             <Element>
-              <Link to={`/${el.value}`} activeClassName="active">
-                {el.key}
-              </Link>
+              <Desc>
+                <AniLink
+                  cover
+                  // duration={5}
+                  direction="right"
+                  bg="#fff"
+                  // bg="#10A4A6"
+                  to={`/${el.value}`}
+                  activeClassName="active"
+                >
+                  {el.key}
+                </AniLink>
+              </Desc>
             </Element>
           ))}
         </List>

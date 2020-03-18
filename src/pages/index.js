@@ -31,7 +31,7 @@ const Webdeveloper = styled.h2`
   padding-bottom: 20px;
   margin-top: 20px;
   grid-area: webdev;
-  font-size: 18px;
+  /* font-size: 18px; */
   .web {
     /* font-weight: bold; */
     color: ${({ theme }) => theme.color_theme_a};
@@ -45,16 +45,22 @@ const Webdeveloper = styled.h2`
   }
 `
 
+// const StyledDesc=styled(Desc){
+
+// }
+
 const IndexPage = props => (
   <Layout page={"home"}>
     {/* <SVG /> */}
     {console.log(props)}
-    <Header>mateusz iwaniuk</Header>
+    <Header animate>mateusz iwaniuk</Header>
     <Webdeveloper>
-      <span class="web">web</span>
-      <span class="developer">developer</span>
+      <Desc>
+        <span class="web">web</span>
+        <span class="developer">developer</span>
+      </Desc>
     </Webdeveloper>
-    <Desc>
+    <Desc animate>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus aliquid
       ipsam nam vel animi autem. Libero, numquam quisquam! Voluptates
       repudiandae labore delectus nemo voluptas! Deserunt quibusdam dicta autem

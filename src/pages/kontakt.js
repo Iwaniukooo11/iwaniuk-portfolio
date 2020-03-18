@@ -21,8 +21,10 @@ const Container = styled.div`
 const Contact = props => {
   return (
     <Layout page={"contact"}>
-      <Header>Kontakt</Header>
-      <Desc>
+      <Header animate color={"color_theme_c"}>
+        Kontakt
+      </Header>
+      <Desc animate>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas omnis
         voluptatum distinctio saepe ex. Voluptas quos harum consequuntur
         voluptatum assumenda dolor enim vero suscipit accusamus. Magnam

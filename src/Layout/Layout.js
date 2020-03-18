@@ -2,6 +2,8 @@ import React from "react"
 import Helmet from "react-helmet"
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
 import theme from "../utils/theme"
+import { TransitionPortal } from "gatsby-plugin-transition-link"
+
 import Navigation from "../Layout/Nav/Nav"
 import "bootstrap/dist/css/bootstrap.css"
 
@@ -37,15 +39,42 @@ button,input,textarea{
 ul{
   list-style:none;
 }
+@keyframes animation {
+    0% {
+      /* transform: scale3d(0, 0, 0); */
+      /* transform: scale3d(0.5, 0.5, 0.5); */
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    40% {
+      animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+      transform: scale3d(1.08, 1.08, 1.08);
+    }
+    60% {
+      animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+      transform: scale3d(1, 1, 1);
+    }
+    80% {
+      animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+      transform: scale3d(1.03, 1.03, 1.03);
+    }
+    100% {
+      animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transform: scale3d(1, 1, 1);
+    }
+  }
 `
 const Container = styled.main`
   min-height: 100vh; //!
-  padding: 0 5vw;
+  padding: 30px 5vw;
   display: grid;
   justify-items: center;
   align-content: center;
   row-gap: 10px;
   @media (min-width: 768px) {
+    padding: 50px 5vw;
     padding-left: calc(37% + (100% - 37% - 440px) / 2);
     justify-items: flex-start;
     justify-content: center;
@@ -73,6 +102,9 @@ const Container = styled.main`
   }
   &.contact {
     grid-template-areas: "header" "desc" "inputs";
+  }
+  &.projects {
+    grid-template-areas: "header" "desc" "list";
   }
 `
 
@@ -119,7 +151,9 @@ const Layout = props => {
         </Helmet>
         <SVG />
         <Navigation content={theme.content} />
-        <LeftCard content={theme.content} />
+        <TransitionPortal>
+          <LeftCard content={theme.content} />
+        </TransitionPortal>
         <Container className={props.page} content={theme.content}>
           {props.children}
         </Container>

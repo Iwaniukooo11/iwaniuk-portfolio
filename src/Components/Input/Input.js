@@ -24,12 +24,18 @@ const Label = styled.label`
   &::after {
     content: ":";
   }
+  @media (min-width: 960px) {
+    font-size: 16px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 18px;
+  }
 `
 const Line = styled.div`
   width: 100%;
   height: 2px;
   background-color: ${({ theme }) => theme.color_theme_a};
-  transform: translateX(-75%);
+  transform: translateX(-75%) translateY(-1px);
   transition: 0.3s;
   &.active {
     transform: none;

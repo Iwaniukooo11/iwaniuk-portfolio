@@ -37,8 +37,10 @@ const About = props => {
   console.log(props)
   return (
     <Layout page="about">
-      <Header color={"color_theme_c"}>O mnie</Header>
-      <Desc>{content.content.about.data.desc}</Desc>
+      <Header animate color={"color_theme_c"}>
+        O mnie
+      </Header>
+      <Desc animate>{content.content.about.data.desc}</Desc>
       <Ul>
         {/* <Li>
           <Collapse
