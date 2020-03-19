@@ -8,6 +8,14 @@ import Button from "../Components/Button/Button"
 import ButtonWrapper from "../Components/ButtonWrapper/ButtonWrapper"
 import content from "../utils/content"
 
+let start = Date.now()
+window.onload = () => {
+  console.log(Date.now() - start)
+}
+document.fonts.ready.then = () => {
+  console.log(Date.now() - start)
+}
+
 const Webdeveloper = styled.h2`
   padding-bottom: 20px;
   margin-top: 20px;

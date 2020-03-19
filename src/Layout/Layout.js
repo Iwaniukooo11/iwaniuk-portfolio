@@ -161,7 +161,6 @@ const Layout = props => {
           />
           <meta property="og:image" content="icons/background.jpg" />
           <meta propety="og:description" property="Miejsce na opis" />
-          <script src="https://smtpjs.com/v3/smtp.js"></script>
         </Helmet>
         <SVG />
         <Navigation content={theme.content} />
