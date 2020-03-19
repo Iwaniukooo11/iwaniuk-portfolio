@@ -1,8 +1,8 @@
-// require("dotenv").config({
-//   USER_ID: `${process.env.GATSBY_USER_ID}`,
-//   path: `.env.${process.env.NODE_ENV}`,
-//   // path: `.env`,
-// })
+require("dotenv").config({
+  // GATSBY_APP_USER_ID: `${process.env.GATSBY_USER_ID}`,
+  path: `.env.${process.env.NODE_ENV}`,
+  // path: `.env`,
+})
 
 module.exports = {
   siteMetadata: {
