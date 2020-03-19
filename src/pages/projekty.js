@@ -11,14 +11,34 @@ import tost from "../assets/projects/tost.jpg"
 
 // const images = [cansat, model3d, tost, swietlik]
 const images = [
-  { img: cansat, title: "Project Trailblazer", tech: "html scss js panini" },
+  {
+    img: cansat,
+    title: "Project Trailblazer",
+    tech: "html scss js panini",
+    code: "https://github.com/Iwaniukooo11/project_cosmos",
+    live: "http://www.project-trailblazer.pl/",
+  },
   {
     img: model3d,
     title: "Cansat Model 3D",
     tech: "html scss three.js chart.js firebase",
+    code: "https://github.com/Iwaniukooo11/cansat_model3d",
+    live: "https://iwaniukooo11.github.io/cansat_model3d/",
   },
-  { img: tost, title: "Toster App", tech: "react router redux firebase scss" },
-  { img: swietlik, title: "Raw Photography", tech: "sapper datoCMS scss" },
+  {
+    img: tost,
+    title: "Toster App",
+    tech: "react router redux firebase scss",
+    code: "https://github.com/Iwaniukooo11/toster-app",
+    live: "https://iwaniukooo11.github.io/toster-app/",
+  },
+  {
+    img: swietlik,
+    title: "Raw Photography",
+    tech: "sapper datoCMS scss",
+    code: "https://github.com/Iwaniukooo11/agata-photography",
+    live: "https://raw-swietlik.netlify.com/",
+  },
 ]
 
 const List = styled.ul`
@@ -34,25 +54,7 @@ const List = styled.ul`
 `
 const ratio = 0.67
 
-const Img = styled.img`
-  /* width: 72vw;
-  height: calc(${ratio} * 72vw);
-  object-fit: cover;
-  object-position: center;
-  margin: 5px auto;
-  box-shadow: 20px 0 35px rgba(0, 0, 0, 0.25);
-  opacity: 0.95;
-  @media (min-width: 768px) {
-    width: 350px;
-    height: calc(${ratio} * 350px);
-  }
-  @media (min-width: 1200px) {
-    margin: 0px;
-    opacity: 0.7;
-    width: 25vw;
-    height: calc(${ratio} * 25vw);
-  } */
-`
+const Img = styled.img``
 const Li = styled.li`
  background-image:url('${props => props.bg}');
   background-size: cover;
@@ -60,7 +62,6 @@ const Li = styled.li`
   height: calc(${ratio} * 72vw);
   margin: 5px auto;
   box-shadow: 20px 0 35px rgba(0, 0, 0, 0.25);
-  /* opacity: 0.95; */
   opacity:0;
   animation:scale 1s ${props => props.index * 300}ms both;
 
@@ -68,15 +69,9 @@ const Li = styled.li`
     from{
       transform:scale(0.1);
       opacity:0;
-    /* opacity:0.3; */
 
     }
-    75%{
-      /* transform:scale(1.2); */
-    }
-    99%{
-      /* opacity:0.3; */
-    }
+   
     to{
       opacity:0.8;
       transform:scale(1);
@@ -150,15 +145,13 @@ const Article = styled.article`
   .button-wrap,
   .minihead,
   .technology {
-    /* opacity: 0; */
     transition: 0.5s;
   }
 
   &:hover {
-    /* background-color: ${({ theme }) => theme.color_white}; */
-    background-color:rgba(255,255,255,0.92);
-    .button{
-      transform:none;
+    background-color: rgba(255, 255, 255, 0.92);
+    .project-btn {
+      transform: none;
     }
     .img {
       opacity: 0.2;
@@ -167,14 +160,8 @@ const Article = styled.article`
     .minihead,
     .technology {
       opacity: 1;
-      /* transition:.3s */
     }
   }
-  /* display */
-
-  /* @media (min-width: 1200px) {
-    background-color: ${({ theme }) => theme.color_theme_b};
-  } */
 `
 
 const Projects = props => {
@@ -193,12 +180,29 @@ const Projects = props => {
           <Li bg={el.img} index={i + 1}>
             <Article>
               <ButtonWrap className="button-wrap">
-                <StyledButton empty left>
-                  live
-                </StyledButton>
-                <StyledButton empty right>
-                  code
-                </StyledButton>
+                <Button
+                  empty
+                  left
+                  project
+                  as={"span"}
+                  // href={el.live}
+                >
+                  <a href={el.live} target="_blank">
+                    live
+                  </a>
+                </Button>
+                <Button
+                  empty
+                  right
+                  project
+                  // to={el.code}
+                  // target={"_blank"}
+                  as={"span"}
+                >
+                  <a href={el.code} target="_blank">
+                    code
+                  </a>
+                </Button>
               </ButtonWrap>
               <MiniHead className="minihead">{el.title}</MiniHead>
               <Technology className="technology">{el.tech}</Technology>

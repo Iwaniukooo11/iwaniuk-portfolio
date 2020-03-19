@@ -71,7 +71,7 @@ const Container = styled.main`
     padding: 50px 5vw;
     justify-items: flex-start;
     justify-content: center;
-    margin-left: 300px;
+    margin-left: 330px;
   }
 
   @media (min-width: 960px) {
