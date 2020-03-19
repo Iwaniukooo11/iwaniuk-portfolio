@@ -1,3 +1,9 @@
+// require("dotenv").config({
+//   USER_ID: `${process.env.GATSBY_USER_ID}`,
+//   path: `.env.${process.env.NODE_ENV}`,
+//   // path: `.env`,
+// })
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
