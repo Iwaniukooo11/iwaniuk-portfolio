@@ -1,12 +1,15 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import Layout from "../Layout/Layout"
 import Header from "../Components/Header/Header"
 import Desc from "../Components/Desc/Desc"
 import Input from "../Components/Input/Input"
 import Button from "../Components/Button/Button"
+import emailjs from "emailjs-com"
+import { userID } from "../utils/apikeys"
+import content from "../utils/content"
 
-const Container = styled.div`
+const Container = styled.form`
   grid-area: inputs;
   width: 100%;
   max-width: 500px;
@@ -14,27 +17,84 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
 `
-// const StyledButton = styled(Button)`
-//   margin: 10px auto;
-// `
 
 const Contact = props => {
+  const [state, setState] = useState({})
+  const [isSent, setIsSent] = useState(false)
+
+  const changeHandlder = e => {
+    state[e.target.id] = e.target.value
+    setState(state)
+  }
+  const send = e => {
+    e.preventDefault()
+    emailjs.init(userID)
+    console.log(e.target)
+    emailjs.sendForm("gmail", "template_IXjcBTfO", e.target, userID).then(
+      result => {
+        console.log(result.text)
+        setState({})
+        setIsSent(true)
+      },
+      error => {
+        console.log(error.text)
+      }
+    )
+  }
+
+  const SendInfo = styled.span`
+    opacity: ${props => (props.active ? "1" : "0")};
+    transition: 1s;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+    color: ${({ theme }) => theme.color_theme_a};
+    font-size: 1.2em;
+    font-weight: bold;
+  `
+
   return (
     <Layout page={"contact"}>
       <Header animate color={"color_theme_c"}>
         Kontakt
       </Header>
       <Desc animate>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas omnis
-        voluptatum distinctio saepe ex. Voluptas quos harum consequuntur
-        voluptatum assumenda dolor enim vero suscipit accusamus. Magnam
-        molestias nam officia obcaecati?
+        {content.content.contact.desc}
+        <br />
+        <SendInfo active={isSent}>Wysłano!</SendInfo>
       </Desc>
-      <Container>
-        <Input small type="text" id="firstname" label="imię" />
-        <Input small type="text" id="lastname" label="nazwisko" />
-        <Input type="email" id="email" label="imię" label="email" />
-        <Input as="textarea" id="textarea" rows="4" label="text" />
+      <Container onSubmit={send}>
+        <Input
+          small
+          type="text"
+          id="firstname"
+          label="imię"
+          onChange={changeHandlder}
+          state={state}
+        />
+        <Input
+          small
+          type="text"
+          id="lastname"
+          label="nazwisko"
+          onChange={changeHandlder}
+          state={state}
+        />
+        <Input
+          type="email"
+          id="email"
+          label="email"
+          onChange={changeHandlder}
+          state={state}
+        />
+        <Input
+          as="textarea"
+          id="textarea"
+          rows="4"
+          label="text"
+          onChange={changeHandlder}
+          state={state}
+        />
         <Button as="button" type="submit" center>
           wyślij!
         </Button>

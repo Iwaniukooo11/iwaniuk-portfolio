@@ -6,33 +6,13 @@ import Header from "../Components/Header/Header"
 import Desc from "../Components/Desc/Desc"
 import Button from "../Components/Button/Button"
 import ButtonWrapper from "../Components/ButtonWrapper/ButtonWrapper"
-
-// const SVG = styled.div`
-//   border-radius: 71% 29% 0% 100% / 100% 23% 77% 0%;
-//   width: 200px;
-//   height: 90px;
-//   position: fixed;
-//   bottom: 0;
-//   right: -10%;
-//   background-image: linear-gradient(
-//     to right,
-//     ${({ theme }) => theme.color_theme_a},
-//     ${({ theme }) => theme.color_theme_b}
-//   );
-//   @media (min-width: 1200px) {
-//     width: 400px;
-//     height: 180px;
-//     right: 0;
-//   }
-// `
+import content from "../utils/content"
 
 const Webdeveloper = styled.h2`
   padding-bottom: 20px;
   margin-top: 20px;
   grid-area: webdev;
-  /* font-size: 18px; */
   .web {
-    /* font-weight: bold; */
     color: ${({ theme }) => theme.color_theme_a};
   }
   .developer {
@@ -43,10 +23,6 @@ const Webdeveloper = styled.h2`
     transform: translateY(-20px);
   }
 `
-
-// const StyledDesc=styled(Desc){
-
-// }
 
 const IndexPage = props => (
   <Layout page={"home"}>
@@ -59,12 +35,7 @@ const IndexPage = props => (
         <span class="developer">developer</span>
       </Desc>
     </Webdeveloper>
-    <Desc animate>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus aliquid
-      ipsam nam vel animi autem. Libero, numquam quisquam! Voluptates
-      repudiandae labore delectus nemo voluptas! Deserunt quibusdam dicta autem
-      eligendi odit.
-    </Desc>
+    <Desc animate>{content.content.home.data.desc}</Desc>
     <ButtonWrapper>
       <Button
         pos={"pos-left"}

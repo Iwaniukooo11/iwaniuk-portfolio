@@ -57,6 +57,10 @@ const Container = styled.div`
 
 const FullInput = props => {
   const [inputValue, setInputValue] = useState("")
+  const clickEvent = e => {
+    props.onChange(e)
+    setInputValue(e.target.value)
+  }
   return (
     <Container small={props.small}>
       <Label for={props.id}>{props.label}</Label>
@@ -65,11 +69,12 @@ const FullInput = props => {
         type={props.type}
         id={props.id}
         name={props.id}
-        value={inputValue}
-        onInput={e => setInputValue(e.target.value)}
+        value={props.state[props.id] || ""}
+        // onInput={e => setInputValue(e.target.value)}
+        onInput={e => clickEvent(e)}
         rows={props.rows ?? ""}
       />
-      <Line className={inputValue && "active"} />
+      <Line className={props.state[props.id] && "active"} />
     </Container>
   )
 }

@@ -8,6 +8,7 @@ import model3d from "../assets/projects/3d.jpg"
 import cansat from "../assets/projects/cansat.jpg"
 import swietlik from "../assets/projects/swietlik.jpg"
 import tost from "../assets/projects/tost.jpg"
+import content from "../utils/content"
 
 // const images = [cansat, model3d, tost, swietlik]
 const images = [
@@ -170,11 +171,7 @@ const Projects = props => {
       <Header animate color={"color_theme_c"}>
         Projekty
       </Header>
-      <Desc animate>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque a iusto
-        eius voluptatem dolorem aliquid reiciendis numquam modi blanditiis
-        explicabo culpa excepturi quod, enim quas sint esse eligendi sed facere?
-      </Desc>
+      <Desc animate>{content.content.projects.data.desc}</Desc>
       <List>
         {images.map((el, i) => (
           <Li bg={el.img} index={i + 1}>
