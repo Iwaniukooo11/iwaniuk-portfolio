@@ -52,7 +52,8 @@ const Bold = styled.b`
 `
 const Icon = styled.i`
   font-size: 23px;
-  margin-right: 20px;
+  /* margin-right: 20px; */
+  margin: 0 20px 20px 0;
   transition: 0.3s;
   opacity: 0.8;
   color: ${({ theme }) => theme.color_theme_b};
@@ -70,17 +71,15 @@ const Contact = props => {
     textarea: "",
   })
   const [isSent, setIsSent] = useState(false)
+  const [btnSending, setBtnSending] = useState(false)
   const [invalid, setInvalid] = useState("")
 
   const changeHandlder = e => {
     state[e.target.id] = e.target.value
-    // if (!e.target.value) delete state[e.target.id]
     setState(state)
-    console.log(state)
   }
 
   const validate = obj => {
-    // if (Object.keys(obj).length != 4) throw "NOT_ALL"
     const testObj = { ...obj }
     delete testObj.email
     for (const [key, value] of Object.entries(testObj)) {
@@ -98,6 +97,7 @@ const Contact = props => {
     const resp = validate(state)
     setInvalid(resp)
     if (resp === "OK") {
+      setBtnSending(true)
       emailjs.init(`${process.env.GATSBY_APP_USER_ID}`)
       emailjs
         .sendForm(
@@ -110,6 +110,7 @@ const Contact = props => {
           result => {
             setState({ firstname: "", lastname: "", email: "", textarea: "" })
             setIsSent(true)
+            setBtnSending(false)
           },
           error => {
             console.log(error.text)
@@ -151,7 +152,7 @@ const Contact = props => {
             as={el.as || null}
           />
         ))}
-        <Button as="button" type="submit" center>
+        <Button as="button" type="submit" center disabled={btnSending}>
           wyślij!
         </Button>
       </Container>

@@ -14,7 +14,6 @@ const Button = styled(Link)`
   letter-spacing: 3px;
   transition: 0.3s;
   padding: 7px 15px;
-  /* opacity:0.9; */
   background-image: linear-gradient(
     to right,
     ${({ theme }) => theme.color_theme_a},
@@ -24,7 +23,10 @@ const Button = styled(Link)`
   border-width: 1px;
   border-style: solid;
   border-color: none;
-
+  &:disabled {
+    opacity: 0.4;
+    background-color: #fff;
+  }
   &:hover {
     opacity: 0.9;
   }
