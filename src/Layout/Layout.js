@@ -218,6 +218,7 @@ const Layout = props => {
   try {
     if (window !== "undefined")
       if (window.history.length == 2 && !isLoad) setIsLoad(true)
+    console.log(window.history)
   } catch {}
 
   return (
