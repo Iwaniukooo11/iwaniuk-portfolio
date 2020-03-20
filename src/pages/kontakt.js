@@ -10,8 +10,8 @@ import content from "../utils/content"
 import socials from "../utils/socials"
 
 const inputData = [
-  { id: "firstname", label: "imię", type: "text", small: true },
-  { id: "lastname", label: "nazwisko", type: "text", small: true },
+  { id: "firstname", label: "imię", type: "text", small: true, max: 16 },
+  { id: "lastname", label: "nazwisko", type: "text", small: true, max: 16 },
   { id: "email", label: "email", type: "email" },
   { id: "textarea", label: "wiadomość", type: "text", as: "textarea" },
 ]
@@ -150,6 +150,7 @@ const Contact = props => {
             onChange={changeHandlder}
             state={state}
             as={el.as || null}
+            max={el.max}
           />
         ))}
         <Button as="button" type="submit" center disabled={btnSending}>

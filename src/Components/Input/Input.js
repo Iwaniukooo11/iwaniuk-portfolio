@@ -73,6 +73,7 @@ const FullInput = props => {
         type={props.type}
         id={props.id}
         name={props.id}
+        maxLength={props.max || ""}
         value={props.state[props.id] || ""}
         // onInput={e => setInputValue(e.target.value)}
         onInput={e => clickEvent(e)}
