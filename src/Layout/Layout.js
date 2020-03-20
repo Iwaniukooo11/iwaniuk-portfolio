@@ -202,14 +202,9 @@ const Progress = styled.div`
 `
 
 const Layout = props => {
-  // if(window!=='undefined')
   const [isLoad, setIsLoad] = useState(false)
-  console.log(window.history.length, isLoad)
   if (window !== "undefined")
-    if (window.history.length == 2 && !isLoad)
-      // setTimeout(() => setIsLoad(true), 1000)
-      setIsLoad(true)
-  // if(window.history.length)
+    if (window.history.length == 2 && !isLoad) setIsLoad(true)
 
   return (
     <ThemeProvider theme={theme}>
