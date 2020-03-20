@@ -233,9 +233,9 @@ const WhiteCard = styled.div`
 `
 
 const Layout = props => {
-  let globalWindow = ""
+  let historyState = ""
   try {
-    globalWindow = window
+    historyState = window.history.state
   } catch {}
 
   const [isLoad, setIsLoad] = useState(false)
@@ -293,7 +293,7 @@ const Layout = props => {
         <WhiteCard className={isLoad && "active"} />
         <SVG />
         <Navigation content={theme.content} />
-        {isLoad || globalWindow.history.state ? (
+        {isLoad || historyState ? (
           <Container className={props.page} content={theme.content}>
             {props.children}
           </Container>
