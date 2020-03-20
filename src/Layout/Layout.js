@@ -293,7 +293,7 @@ const Layout = props => {
         <WhiteCard className={isLoad && "active"} />
         <SVG />
         <Navigation content={theme.content} />
-        {isLoad || globalWindow.state ? (
+        {isLoad || globalWindow.history.state ? (
           <Container className={props.page} content={theme.content}>
             {props.children}
           </Container>
