@@ -32,7 +32,6 @@ const ImagesWrap = styled.div`
 `
 
 const About = props => {
-  console.log(props)
   return (
     <Layout page="about">
       <Header animate color={"color_theme_c"}>

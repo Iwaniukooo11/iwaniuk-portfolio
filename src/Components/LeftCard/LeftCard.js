@@ -68,7 +68,6 @@ const IconWrap = styled.div`
 `
 
 const LeftCard = props => {
-  console.log(props)
   return (
     <Card>
       <List>

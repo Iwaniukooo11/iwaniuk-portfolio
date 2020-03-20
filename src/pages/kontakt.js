@@ -32,7 +32,6 @@ const Contact = props => {
   const send = e => {
     e.preventDefault()
     emailjs.init(`${process.env.GATSBY_APP_USER_ID}`)
-    console.log(e.target)
     emailjs
       .sendForm(
         "gmail",

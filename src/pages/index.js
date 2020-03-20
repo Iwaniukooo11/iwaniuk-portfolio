@@ -35,7 +35,6 @@ const Webdeveloper = styled.h2`
 const IndexPage = props => (
   <Layout page={"home"}>
     {/* <SVG /> */}
-    {console.log(props)}
     <Header animate>mateusz iwaniuk</Header>
     <Webdeveloper>
       <Desc>
