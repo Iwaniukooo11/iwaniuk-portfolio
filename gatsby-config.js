@@ -14,7 +14,8 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-transition-link`,
     // `gatsby-plugin-material-ui`,
-    `gatsby-plugin-styled-components``gatsby-disable-404`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-disable-404`,
 
     {
       resolve: `gatsby-source-filesystem`,
