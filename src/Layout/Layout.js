@@ -31,6 +31,16 @@ body{
     color:${({ theme }) => theme.color_white};
     font-family: 'Poppins', sans-serif;
     font-weight:300;
+    overflow-x:hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    /* background: #FF0000; */
+    background: transparent;
 }
 button,input,textarea{
   outline:none;
@@ -189,22 +199,24 @@ const Progress = styled.div`
   }
   &.active {
     animation: grow 0.8s 0.2s both, goOutLine 1.5s both;
-  }
-  &::before {
-    content: "Loading...";
-    transform: translateX(-50%);
-    left: 50%;
-    top: 45%;
-    position: fixed;
-    z-index: 200;
-    color: ${({ theme }) => theme.color_white};
+    &::before {
+      content: "Loading...";
+      transform: translateX(-50%);
+      left: 50%;
+      top: 45%;
+      position: fixed;
+      z-index: 200;
+      color: ${({ theme }) => theme.color_white};
+    }
   }
 `
 
 const Layout = props => {
   const [isLoad, setIsLoad] = useState(false)
   if (window !== "undefined")
-    if (window.history.length == 2 && !isLoad) setIsLoad(true)
+    try {
+      if (window.history.length == 2 && !isLoad) setIsLoad(true)
+    } catch {}
 
   return (
     <ThemeProvider theme={theme}>
