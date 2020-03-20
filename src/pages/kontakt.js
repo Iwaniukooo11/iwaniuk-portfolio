@@ -76,7 +76,8 @@ const Contact = props => {
         )
         .then(
           result => {
-            console.log(result.text)
+            // console.log(result.text)
+            // console.log("SENT")
             setState({ firstname: "", lastname: "", email: "", textarea: "" })
             setIsSent(true)
           },

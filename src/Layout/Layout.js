@@ -276,6 +276,7 @@ const Layout = props => {
           <meta name="viewport" content="width=device-width,initial-scale=1" />
           <meta property="og:title" content="Mateusz Iwaniuk Portfolio" />
           <meta name="author" content="Mateusz Iwaniuk" />
+          <meta name="title" content="Mateusz Iwaniuk Portfolio" />
           <meta http-equiv="content-type" content="text/html; charset=utf-8" />
           <meta
             name="description"
