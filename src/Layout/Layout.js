@@ -130,6 +130,8 @@ const SVG = styled.div`
 `
 
 const Layout = props => {
+  console.log(window.history)
+  console.log(`${process.env.test}`)
   return (
     <ThemeProvider theme={theme}>
       <>
