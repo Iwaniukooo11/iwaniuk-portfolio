@@ -2,7 +2,7 @@ export default {
   content: {
     contact: {
       desc:
-        "Potrzebujesz strony internetowej? A może masz inną sprawę dotyczącą programowania? Zapraszam do kontaktu za pomoca formularza. Postaram się odpowiedzieć natychmiastowo",
+        "Potrzebujesz strony internetowej? A może masz inną sprawę dotyczącą programowania? Zapraszam do kontaktu za pomoca formularza. Postaram się odpowiedzieć natychmiastowo. Jestem także dostępny pod adresem:",
       data: [
         { key: "lokalizacja", value: "Bydgoszcz, Polska" },
         { key: "e-mail", value: "mateusz.iwaniuk11@gmail.com" },

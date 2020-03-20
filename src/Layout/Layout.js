@@ -105,7 +105,7 @@ const Container = styled.main`
     grid-template-areas: "header" "desc";
   }
   &.contact {
-    grid-template-areas: "header" "desc" "inputs";
+    grid-template-areas: "header" "desc" "socials" "inputs";
   }
   &.projects {
     grid-template-areas: "header" "desc" "list";
