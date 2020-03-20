@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Helmet from "react-helmet"
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
 import theme from "../utils/theme"
@@ -129,9 +129,88 @@ const SVG = styled.div`
   }
 `
 
+const LoadCard = styled.div`
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to right,
+    ${({ theme }) => theme.color_theme_b},
+    ${({ theme }) => theme.color_theme_b}
+  );
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  /* transition: 0.3s; */
+  transform: translateY(-100%);
+  @keyframes goOut {
+    from {
+      transform: none;
+    }
+    75% {
+      transform: none;
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+
+  &.active {
+    /* transform: translateY(-100%); */
+    animation: goOut 1.5s both;
+  }
+`
+const Progress = styled.div`
+  background-color: ${({ theme }) => theme.color_white};
+  width: 10%;
+  height: 1vh;
+  z-index: 200;
+  position: fixed;
+  top: 50%;
+
+  @keyframes grow {
+    from {
+      width: 10%;
+    }
+    to {
+      width: 80%;
+    }
+  }
+  @keyframes goOutLine {
+    from {
+      opacity: 1;
+    }
+    75% {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  &.active {
+    animation: grow 0.8s 0.2s both, goOutLine 1.5s both;
+  }
+  &::before {
+    content: "Loading...";
+    transform: translateX(-50%);
+    left: 50%;
+    top: 45%;
+    position: fixed;
+    z-index: 200;
+    color: ${({ theme }) => theme.color_white};
+  }
+`
+
 const Layout = props => {
-  if (typeof window !== "undefined") console.log(window.history)
-  console.log(`${process.env.test}`)
+  // if(window!=='undefined')
+  const [isLoad, setIsLoad] = useState(false)
+  console.log(window.history.length, isLoad)
+  if (window !== "undefined")
+    if (window.history.length == 2 && !isLoad)
+      // setTimeout(() => setIsLoad(true), 1000)
+      setIsLoad(true)
+  // if(window.history.length)
+
   return (
     <ThemeProvider theme={theme}>
       <>
@@ -169,6 +248,8 @@ const Layout = props => {
         <Container className={props.page} content={theme.content}>
           {props.children}
         </Container>
+        <LoadCard className={isLoad && "active"} />
+        <Progress className={isLoad && "active"} />
         <TransitionPortal>
           <LeftCard content={theme.content} />
         </TransitionPortal>

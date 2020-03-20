@@ -20,6 +20,7 @@ const Card = styled.section`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 50;
   background-image: linear-gradient(
     to right,
     ${({ theme }) => theme.color_theme_a},
