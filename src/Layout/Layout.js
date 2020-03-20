@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Helmet from "react-helmet"
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
 import theme from "../utils/theme"
@@ -215,14 +215,16 @@ const Progress = styled.div`
 
 const Layout = props => {
   const [isLoad, setIsLoad] = useState(false)
-  try {
-    if (window !== "undefined")
-      if (!window.history.state && !isLoad) setIsLoad(true)
+  useEffect(() => {
+    try {
+      if (window !== "undefined")
+        if (!window.history.state && !isLoad) setIsLoad(true)
 
-    // if (window.history.length == 2 && !isLoad) setIsLoad(true)
+      // if (window.history.length == 2 && !isLoad) setIsLoad(true)
 
-    console.log(window.history)
-  } catch {}
+      console.log(window.history)
+    } catch {}
+  }, [])
 
   return (
     <ThemeProvider theme={theme}>
