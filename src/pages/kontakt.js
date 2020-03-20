@@ -6,8 +6,14 @@ import Desc from "../Components/Desc/Desc"
 import Input from "../Components/Input/Input"
 import Button from "../Components/Button/Button"
 import emailjs from "emailjs-com"
-// import { userID } from "../utils/apikeys"
 import content from "../utils/content"
+
+const inputData = [
+  { id: "firstname", label: "imię", type: "text" },
+  { id: "lastname", label: "nazwisko", type: "text" },
+  { id: "email", label: "email", type: "email" },
+  { id: "textarea", label: "wiadomość", type: "text", as: "textarea" },
+]
 
 const Container = styled.form`
   grid-area: inputs;
@@ -18,37 +24,67 @@ const Container = styled.form`
   justify-content: space-between;
 `
 
-console.log(`${process.env.GATSBY_APP_USER_ID}`)
-console.log(`${process.env.NODE_ENV}`)
+// console.log(`${process.env.GATSBY_APP_USER_ID}`)
+// console.log(`${process.env.NODE_ENV}`)
 
 const Contact = props => {
-  const [state, setState] = useState({})
+  const [state, setState] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    textarea: "",
+  })
   const [isSent, setIsSent] = useState(false)
+  const [invalid, setInvalid] = useState("")
 
   const changeHandlder = e => {
     state[e.target.id] = e.target.value
+    // if (!e.target.value) delete state[e.target.id]
     setState(state)
+    console.log(state)
   }
+
+  const validate = obj => {
+    // if (Object.keys(obj).length != 4) throw "NOT_ALL"
+    const testObj = { ...obj }
+    delete testObj.email
+    for (const [key, value] of Object.entries(testObj)) {
+      if (!value) return `${key}`
+    }
+
+    const re = /\S+@\S+\.\S+/
+    if (!re.test(obj.email)) return "email"
+
+    return "OK"
+  }
+
   const send = e => {
     e.preventDefault()
-    emailjs.init(`${process.env.GATSBY_APP_USER_ID}`)
-    emailjs
-      .sendForm(
-        "gmail",
-        "template_IXjcBTfO",
-        e.target,
-        `${process.env.GATSBY_APP_USER_ID}`
-      )
-      .then(
-        result => {
-          console.log(result.text)
-          setState({})
-          setIsSent(true)
-        },
-        error => {
-          console.log(error.text)
-        }
-      )
+    const resp = validate(state)
+    // console.log(resp)
+    // if (resp !== "OK") {
+    setInvalid(resp)
+    // }
+    if (resp === "OK") {
+      emailjs.init(`${process.env.GATSBY_APP_USER_ID}`)
+      emailjs
+        .sendForm(
+          "gmail",
+          "template_IXjcBTfO",
+          e.target,
+          `${process.env.GATSBY_APP_USER_ID}`
+        )
+        .then(
+          result => {
+            console.log(result.text)
+            setState({ firstname: "", lastname: "", email: "", textarea: "" })
+            setIsSent(true)
+          },
+          error => {
+            console.log(error.text)
+          }
+        )
+    }
   }
 
   const SendInfo = styled.span`
@@ -73,37 +109,19 @@ const Contact = props => {
         <SendInfo active={isSent}>Wysłano!</SendInfo>
       </Desc>
       <Container onSubmit={send}>
-        <Input
-          small
-          type="text"
-          id="firstname"
-          label="imię"
-          onChange={changeHandlder}
-          state={state}
-        />
-        <Input
-          small
-          type="text"
-          id="lastname"
-          label="nazwisko"
-          onChange={changeHandlder}
-          state={state}
-        />
-        <Input
-          type="email"
-          id="email"
-          label="email"
-          onChange={changeHandlder}
-          state={state}
-        />
-        <Input
-          as="textarea"
-          id="textarea"
-          rows="4"
-          label="text"
-          onChange={changeHandlder}
-          state={state}
-        />
+        {inputData.map(el => (
+          <Input
+            type={el.type}
+            key={el.id}
+            // value={}
+            invalid={invalid}
+            id={el.id}
+            label={el.label}
+            onChange={changeHandlder}
+            state={state}
+            as={el.as || null}
+          />
+        ))}
         <Button as="button" type="submit" center>
           wyślij!
         </Button>

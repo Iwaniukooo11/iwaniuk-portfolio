@@ -72,7 +72,7 @@ const Navigation = props => {
       <Nav isActive={isActive}>
         <List>
           {props.content.navigation.data.map(el => (
-            <Element>
+            <Element key={el.value}>
               <Desc>
                 <AniLink
                   cover

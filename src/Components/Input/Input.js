@@ -39,6 +39,10 @@ const Line = styled.div`
   transition: 0.3s;
   &.active {
     transform: none;
+    /* background-color: ${({ theme }) => theme.color_theme_a} !important; */
+  }
+  &.error {
+    background-color: red;
   }
 `
 const Container = styled.div`
@@ -63,7 +67,7 @@ const FullInput = props => {
   }
   return (
     <Container small={props.small}>
-      <Label for={props.id}>{props.label}</Label>
+      <Label htmlFor={props.id}>{props.label}</Label>
       <Input
         as={props.as ?? ""}
         type={props.type}
@@ -72,9 +76,13 @@ const FullInput = props => {
         value={props.state[props.id] || ""}
         // onInput={e => setInputValue(e.target.value)}
         onInput={e => clickEvent(e)}
+        // onChange={e => clickEvent(e)}
         rows={props.rows ?? ""}
       />
-      <Line className={props.state[props.id] && "active"} />
+      <Line
+        className={`${props.state[props.id] && "active"}
+         ${props.invalid == props.id && "error"}`}
+      />
     </Container>
   )
 }

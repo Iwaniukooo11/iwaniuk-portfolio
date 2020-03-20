@@ -82,7 +82,7 @@ const LeftCard = props => {
           <Bold>Znajdź mnie:</Bold>
           <IconWrap>
             {socials.map(el => (
-              <a href={el.link} target="_blank">
+              <a href={el.link} target="_blank" key={el.link}>
                 <Icon className={el.icon} />
               </a>
             ))}
