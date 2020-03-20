@@ -23,7 +23,7 @@ const Button = styled(Link)`
 
   border-width: 1px;
   border-style: solid;
-  border-color: transparent;
+  border-color: none;
 
   &:hover {
     opacity: 0.9;

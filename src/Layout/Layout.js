@@ -8,6 +8,8 @@ import Navigation from "../Layout/Nav/Nav"
 import "bootstrap/dist/css/bootstrap.css"
 
 import LeftCard from "../Components/LeftCard/LeftCard"
+import bg_img from '../assets/icons/big_img.jpg'
+import icon from '../assets/icons/icon.svg'
 
 const GlobalStyle = createGlobalStyle`
 /* @import './Layout.scss'; */
@@ -213,10 +215,10 @@ const Progress = styled.div`
 
 const Layout = props => {
   const [isLoad, setIsLoad] = useState(false)
-  if (window !== "undefined")
-    try {
+  try {
+    if (window !== "undefined")
       if (window.history.length == 2 && !isLoad) setIsLoad(true)
-    } catch {}
+  } catch {}
 
   return (
     <ThemeProvider theme={theme}>
@@ -242,13 +244,13 @@ const Layout = props => {
           <meta property="og:title" content="Mateusz Iwaniuk Portfolio" />
           <meta name="author" content="Mateusz Iwaniuk" />
           <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-          <meta name="description" content="Miejsce na opis" />
+          <meta name="description" content="Nazywam się Mateusz Iwaniuk i zajmuję się webdevem. Mieszkam w Bydgoszczy i tworzę strony internetowe. Jeśli potrzebujesz osoby robiącej strony www - Dobrze trafiłeś." />
           <meta
             name="keywords"
             content="Iwaniuk,Trailblazer,Cansat,Mateusz,Programista,Bydgoszcz,Frontend,front-end"
           />
-          <meta property="og:image" content="icons/background.jpg" />
-          <meta propety="og:description" property="Miejsce na opis" />
+          <meta property="og:image" content='static/bg_img.jpg' />
+          <meta propety="og:description" property="Nazywam się Mateusz Iwaniuk i zajmuję się webdevem. Mieszkam w Bydgoszczy i tworzę strony internetowe. Jeśli potrzebujesz osoby robiącej strony www - Dobrze trafiłeś." />
         </Helmet>
         <SVG />
         <Navigation content={theme.content} />
