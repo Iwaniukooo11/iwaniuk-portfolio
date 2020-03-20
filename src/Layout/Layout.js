@@ -283,14 +283,15 @@ const Layout = props => {
             property="Nazywam się Mateusz Iwaniuk i zajmuję się webdevem. Mieszkam w Bydgoszczy i tworzę strony internetowe. Jeśli potrzebujesz osoby robiącej strony www - Dobrze trafiłeś."
           />
         </Helmet>
+        <LoadCard className={isLoad && "active"} />
+        <Progress className={isLoad && "active"} />
+        <WhiteCard className={isLoad && "active"} />
         <SVG />
         <Navigation content={theme.content} />
         <Container className={props.page} content={theme.content}>
           {props.children}
         </Container>
-        <LoadCard className={isLoad && "active"} />
-        <Progress className={isLoad && "active"} />
-        <WhiteCard className={isLoad && "active"} />
+
         <TransitionPortal>
           <LeftCard content={theme.content} />
         </TransitionPortal>
