@@ -213,6 +213,25 @@ const Progress = styled.div`
   }
 `
 
+const WhiteCard = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  background-color: ${({ theme }) => theme.color_white};
+  @keyframes goOutWhite {
+    90% {
+      transform: none;
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+  &.active {
+    animation: goOutWhite 1s both;
+  }
+`
+
 const Layout = props => {
   const [isLoad, setIsLoad] = useState(false)
   useEffect(() => {
@@ -271,6 +290,7 @@ const Layout = props => {
         </Container>
         <LoadCard className={isLoad && "active"} />
         <Progress className={isLoad && "active"} />
+        <WhiteCard className={isLoad && "active"} />
         <TransitionPortal>
           <LeftCard content={theme.content} />
         </TransitionPortal>
