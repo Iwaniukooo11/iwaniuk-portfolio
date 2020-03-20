@@ -174,6 +174,7 @@ const LoadCard = styled.div`
   }
 `
 const Progress = styled.div`
+  opacity: 0;
   background-color: ${({ theme }) => theme.color_white};
   width: 10%;
   height: 1vh;
@@ -187,6 +188,7 @@ const Progress = styled.div`
     }
     to {
       width: 80%;
+      opacity: 0;
     }
   }
   @keyframes goOutLine {

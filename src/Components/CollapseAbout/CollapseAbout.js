@@ -87,7 +87,7 @@ const Example = props => {
           className={`fas fa-caret-right ${isOpen && "active"}`}
           onClick={toggle}
         ></Button>
-        <Header as={"h2"} color={"color_theme_a"} small>
+        <Header as={"h2"} color={"color_theme_a"} small onClick={toggle}>
           {props.header}
         </Header>
       </TextWrap>
