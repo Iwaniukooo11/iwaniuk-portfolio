@@ -144,11 +144,12 @@ const SVG = styled.div`
 const LoadCard = styled.div`
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right,
     ${({ theme }) => theme.color_theme_b},
     ${({ theme }) => theme.color_theme_b}
-  );
+  ); */
+  background-color:${({ theme }) => theme.color_theme_b};
   position: fixed;
   top: 0;
   left: 0;
@@ -218,7 +219,9 @@ const WhiteCard = styled.div`
   top: 0;
   left: 0;
   z-index: 30;
-  background-color: ${({ theme }) => theme.color_white};
+  /* background-color: ${({ theme }) => theme.color_white}; */
+  background-color:${({ theme }) => theme.color_theme_b};
+
   @keyframes goOutWhite {
     90% {
       transform: none;
@@ -288,9 +291,9 @@ const Layout = props => {
             property="Nazywam się Mateusz Iwaniuk i zajmuję się webdevem. Mieszkam w Bydgoszczy i tworzę strony internetowe. Jeśli potrzebujesz osoby robiącej strony www - Dobrze trafiłeś."
           />
         </Helmet>
-        <LoadCard className={isLoad && "active"} />
-        <Progress className={isLoad && "active"} />
         <WhiteCard className={isLoad && "active"} />
+        <Progress className={isLoad && "active"} />
+        <LoadCard className={isLoad && "active"} />
         <SVG />
         <Navigation content={theme.content} />
         {isLoad || historyState ? (
