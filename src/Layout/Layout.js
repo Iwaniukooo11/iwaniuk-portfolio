@@ -23,6 +23,7 @@ a{
   text-decoration:none;
   color:inherit;
   font:inherit;
+  outline:none !important;
 }
 a:hover,a:active{
   text-decoration:none;

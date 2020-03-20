@@ -29,12 +29,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Mateusz Iwaniuk Portfolio`,
+        short_name: `Iwaniuk`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
+        // display: "standalone",
+        display: "fullscreen",
+        description: "miejsce na opis",
+        background_color: `#10A4A6`,
+        // theme_color: `#10A4A6`,
+        theme_color: `#3A7DB9`,
+        // display: `minimal-ui`,
         icon: `src/assets/icons/icon.svg`, // This path is relative to the root of the site.
       },
     },
