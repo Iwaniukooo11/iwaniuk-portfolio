@@ -71,19 +71,20 @@ ul{
     transform: scale3d(1, 1, 1); } }
 `
 const Container = styled.main`
-  max-width: 540px;
+  /* max-width: 540px; */
 
   min-height: 100vh; //!
-  padding: 30px 5vw;
+  padding: 40px 5vw;
   display: grid;
   justify-items: center;
   align-content: center;
   row-gap: 10px;
   @media (min-width: 768px) {
-    padding: 50px 5vw;
+    padding: 50px 7vw;
     justify-items: flex-start;
     justify-content: center;
     margin-left: 330px;
+    max-width: 540px;
   }
 
   @media (min-width: 960px) {

@@ -3,6 +3,7 @@ import styled from "styled-components"
 const Header = styled.h1`
   font-size: ${props => (props.small ? "23px" : "32px")};
   word-spacing: 5px;
+  margin-bottom: ${props => (!props.noMargin ? "25px" : "")};
   grid-area: header;
   text-transform: uppercase;
   color: ${props => props.theme[props.color] || props.theme.color_dark};

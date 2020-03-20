@@ -15,14 +15,14 @@ const images = [
   {
     img: cansat,
     title: "Project Trailblazer",
-    tech: "html scss js panini",
+    tech: "scss js panini",
     code: "https://github.com/Iwaniukooo11/project_cosmos",
     live: "http://www.project-trailblazer.pl/",
   },
   {
     img: model3d,
     title: "Cansat Model 3D",
-    tech: "html scss three.js chart.js firebase",
+    tech: "scss three.js chart.js firebase",
     code: "https://github.com/Iwaniukooo11/cansat_model3d",
     live: "https://iwaniukooo11.github.io/cansat_model3d/",
   },
@@ -55,13 +55,12 @@ const List = styled.ul`
 `
 const ratio = 0.67
 
-const Img = styled.img``
 const Li = styled.li`
  background-image:url('${props => props.bg}');
   background-size: cover;
-  width: 72vw;
+  width: 75vw;
   height: calc(${ratio} * 72vw);
-  margin: 5px auto;
+  margin: 20px auto;
   box-shadow: 20px 0 35px rgba(0, 0, 0, 0.25);
   opacity:0;
   animation:scale 1s ${props => props.index * 300}ms both;
@@ -81,6 +80,7 @@ const Li = styled.li`
 
   @media (min-width: 768px) {
     width: 350px;
+    margin:0;
     height: calc(${ratio} * 350px);
   }
   @media (min-width: 1200px) {
@@ -129,12 +129,16 @@ const StyledButton = styled(Button).attrs(props => ({
 const ButtonWrap = styled.div`
   position: absolute;
   transform: translate(-50%);
-  top: 40%;
+  /* top: 40%; */
+  top: 25%;
   left: 50%;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   overflow: hidden;
+  @media (min-width: 768px) {
+    top: 40%;
+  }
 `
 const Article = styled.article`
   transition: 0.5s;
