@@ -141,38 +141,38 @@ const SVG = styled.div`
   }
 `
 
-// const LoadCard = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   /* background-image: linear-gradient(
-//     to right,
-//     ${({ theme }) => theme.color_theme_b},
-//     ${({ theme }) => theme.color_theme_b}
-//   ); */
-//   background-color:${({ theme }) => theme.color_theme_b};
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   z-index: 100;
-//   /* transition: 0.3s; */
-//   transform: translateY(-100%);
-//   @keyframes goOut {
-//     from {
-//       transform: none;
-//     }
-//     75% {
-//       transform: none;
-//     }
-//     to {
-//       transform: translateY(-100%);
-//     }
-//   }
+const LoadCard = styled.div`
+  width: 100%;
+  height: 100%;
+  /* background-image: linear-gradient(
+    to right,
+    ${({ theme }) => theme.color_theme_b},
+    ${({ theme }) => theme.color_theme_b}
+  ); */
+  background-color:${({ theme }) => theme.color_theme_b};
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  /* transition: 0.3s; */
+  transform: translateY(-100%);
+  @keyframes goOut {
+    from {
+      transform: none;
+    }
+    75% {
+      transform: none;
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
 
-//   &.active {
-//     /* transform: translateY(-100%); */
-//     animation: goOut 1.5s both;
-//   }
-// `
+  &.active {
+    /* transform: translateY(-100%); */
+    animation: goOut 1.5s both;
+  }
+`
 const Progress = styled.div`
   background-color: ${({ theme }) => theme.color_white};
   width: 10%;
@@ -214,26 +214,26 @@ const Progress = styled.div`
   }
 `
 
-const WhiteCard = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 30;
-  /* background-color: ${({ theme }) => theme.color_white}; */
-  background-color:${({ theme }) => theme.color_theme_b};
+// const WhiteCard = styled.div`
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   z-index: 30;
+//   /* background-color: ${({ theme }) => theme.color_white}; */
+//   background-color:${({ theme }) => theme.color_theme_b};
 
-  @keyframes goOutWhite {
-    90% {
-      transform: none;
-    }
-    to {
-      transform: translateY(-100%);
-    }
-  }
-  &.active {
-    animation: goOutWhite 1s both;
-  }
-`
+//   @keyframes goOutWhite {
+//     90% {
+//       transform: none;
+//     }
+//     to {
+//       transform: translateY(-100%);
+//     }
+//   }
+//   &.active {
+//     animation: goOutWhite 1s both;
+//   }
+// `
 
 const Layout = props => {
   let historyState = ""
