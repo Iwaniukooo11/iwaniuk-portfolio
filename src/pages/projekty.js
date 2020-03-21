@@ -76,6 +76,7 @@ const ratio = 0.67
 const Li = styled.li`
  background-image:url('${props => props.bg}');
   background-size: cover;
+  background-position:center;
   width: 75vw;
   height: calc(${ratio} * 72vw);
   margin: 20px auto;
