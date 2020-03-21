@@ -54,8 +54,8 @@ const images = [
     img: portfolio,
     title: "Iwaniuk Portfolio",
     tech: "gatsby styled-components",
-    code: "https://github.com/Iwaniukooo11/prostamatma",
-    live: "https://iwaniukooo11.github.io/prostamatma/",
+    code: "https://github.com/Iwaniukooo11/iwaniuk-portfolio",
+    live: "https://iwaniuk-test.netlify.com/",
   },
 ]
 
