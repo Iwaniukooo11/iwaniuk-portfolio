@@ -2,7 +2,7 @@ export default {
   content: {
     contact: {
       desc:
-        "Potrzebujesz strony internetowej? A może masz inną sprawę dotyczącą programowania? Zapraszam do kontaktu za pomoca formularza. Postaram się odpowiedzieć natychmiastowo. Jestem także dostępny pod adresem:",
+        " Zapraszam do kontaktu za pomocą formularza. Postaram się odpowiedzieć bezzwłocznie. Jestem także dostępny pod adresem::",
       data: [
         { key: "lokalizacja", value: "Bydgoszcz, Polska" },
         { key: "e-mail", value: "mateusz.iwaniuk11@gmail.com" },
@@ -11,7 +11,7 @@ export default {
     home: {
       data: {
         desc:
-          "Nazywam się Mateusz Iwaniuk i zajmuję się webdevem. Mieszkam w Bydgoszczy i tworzę strony internetowe. Jeśli potrzebujesz osoby robiącej strony www - Dobrze trafiłeś.",
+          "Rozpoczynasz nowy biznes, zakladasz organizacje? Pewnie potrzebujesz strony internetowej! W takim razie trafiłeś najlepiej jak mogłes.",
       },
     },
     projects: {
@@ -22,7 +22,7 @@ export default {
     about: {
       data: {
         desc:
-          "Mam 17 lat i chodzę do VILO w Bydgoszczy. Na codzień zajmuję się frontendem. Obecnie uczę się backendu oraz w formie rozrywki poszerzam swoją wiedzę na temat Data Science.",
+          "Nazywam się Mateusz Iwaniuk i zajmuję się tworzeniem stron internetowych. Mieszkam w Bydgoszczy i jestem uczniem VILO. Zajmuję się tworzeniem aplikacji webowych od strony front-end'u. Jeśli potrzebujesz nieszablonowej strony www  - dobrze trafiłeś, bo zajmuję się tym z pasją.",
         list: [
           {
             head: "jestem finalistą konkursu cansat 2020",

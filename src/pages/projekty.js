@@ -4,10 +4,14 @@ import Layout from "../Layout/Layout"
 import Header from "../Components/Header/Header"
 import Desc from "../Components/Desc/Desc"
 import Button from "../Components/Button/Button"
+
 import model3d from "../assets/projects/3d.jpg"
 import cansat from "../assets/projects/cansat.jpg"
 import swietlik from "../assets/projects/swietlik.jpg"
 import tost from "../assets/projects/tost.jpg"
+import portfolio from "../assets/projects/portfolio.jpg"
+import math from "../assets/projects/math.jpg"
+
 import content from "../utils/content"
 
 // const images = [cansat, model3d, tost, swietlik]
@@ -39,6 +43,20 @@ const images = [
     tech: "sapper datoCMS scss",
     code: "https://github.com/Iwaniukooo11/agata-photography",
     live: "https://raw-swietlik.netlify.com/",
+  },
+  {
+    img: math,
+    title: "Math Quiz",
+    tech: "scss js",
+    code: "https://github.com/Iwaniukooo11/prostamatma",
+    live: "https://iwaniukooo11.github.io/prostamatma/",
+  },
+  {
+    img: portfolio,
+    title: "Iwaniuk Portfolio",
+    tech: "gatsby styled-components",
+    code: "https://github.com/Iwaniukooo11/prostamatma",
+    live: "https://iwaniukooo11.github.io/prostamatma/",
   },
 ]
 
