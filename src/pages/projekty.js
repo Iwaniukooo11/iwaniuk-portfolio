@@ -14,7 +14,6 @@ import math from "../assets/projects/math.jpg"
 
 import content from "../utils/content"
 
-// const images = [cansat, model3d, tost, swietlik]
 const images = [
   {
     img: cansat,
@@ -148,7 +147,6 @@ const StyledButton = styled(Button).attrs(props => ({
 const ButtonWrap = styled.div`
   position: absolute;
   transform: translate(-50%);
-  /* top: 40%; */
   top: 25%;
   left: 50%;
   width: 100%;
@@ -200,25 +198,12 @@ const Projects = props => {
           <Li bg={el.img} index={i + 1}>
             <Article>
               <ButtonWrap className="button-wrap">
-                <Button
-                  empty
-                  left
-                  project
-                  as={"span"}
-                  // href={el.live}
-                >
+                <Button empty left project as={"span"}>
                   <a href={el.live} target="_blank">
                     live
                   </a>
                 </Button>
-                <Button
-                  empty
-                  right
-                  project
-                  // to={el.code}
-                  // target={"_blank"}
-                  as={"span"}
-                >
+                <Button empty right project as={"span"}>
                   <a href={el.code} target="_blank">
                     code
                   </a>
@@ -226,7 +211,6 @@ const Projects = props => {
               </ButtonWrap>
               <MiniHead className="minihead">{el.title}</MiniHead>
               <Technology className="technology">{el.tech}</Technology>
-              {/* <Img className="img" src={el.img} alt={el.title} /> */}
             </Article>
           </Li>
         ))}

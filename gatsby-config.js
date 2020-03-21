@@ -1,7 +1,5 @@
 require("dotenv").config({
-  // GATSBY_APP_USER_ID: `${process.env.GATSBY_USER_ID}`,
   path: `.env.${process.env.NODE_ENV}`,
-  // path: `.env`,
 })
 
 module.exports = {
@@ -13,7 +11,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-transition-link`,
-    // `gatsby-plugin-material-ui`,
     `gatsby-plugin-styled-components`,
     `gatsby-disable-404`,
 
@@ -32,13 +29,10 @@ module.exports = {
         name: `Mateusz Iwaniuk Portfolio`,
         short_name: `Iwaniuk`,
         start_url: `/`,
-        // display: "standalone",
         display: "fullscreen",
         description: "miejsce na opis",
-        background_color: `#10A4A6`,
-        // theme_color: `#10A4A6`,
+        background_color: `#3A7DB9`,
         theme_color: `#3A7DB9`,
-        // display: `minimal-ui`,
         icon: `src/assets/icons/icon.svg`, // This path is relative to the root of the site.
       },
     },

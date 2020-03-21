@@ -55,7 +55,6 @@ const IconWrap = styled.div`
   margin-top: 10px;
   grid-area: "desc";
   display: flex;
-  /* justify-content: space-evenly; */
 `
 
 const LeftCard = props => {

@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import Desc from "../Desc/Desc"
-// const Button = styled.a`
 
 const Button = styled(Link)`
   font-size: 17px;

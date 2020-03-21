@@ -9,7 +9,6 @@ const Container = styled.article`
   display: grid;
   grid-template-areas: "wrap" "collapse";
   width: 100%;
-  /* margin: 15px 0; */
   @media (min-width: 1200px) {
     margin: 5px 0;
   }
@@ -19,7 +18,6 @@ const Button = styled.i`
   color: ${({ theme }) => theme.color_theme_a};
   font-size: 26px;
   margin-right: 20px;
-  /* transform-origin: 50% 50%; */
   &:hover {
     cursor: pointer;
   }
@@ -40,8 +38,6 @@ const StyledCollapse = styled(Collapse)`
   grid-template-areas: "desc" "images";
 `
 const TextWrap = styled.div`
-  /* display: Flex;
-  justify-content: space-between; */
   display: grid;
   grid-area: wrap;
   grid-template-areas: "button header";
@@ -58,11 +54,9 @@ const Img = styled.img`
   border-radius: 20px;
   margin: 15px 20px;
   box-shadow: 10px 0 35px rgba(75, 97, 157, 0.65);
-  /* box-shadow: 10px 0 35px rgba(16, 164, 166, 0.5); */
   @media (min-width: 1200px) {
     width: 200px;
     height: 96px;
-    /* margin: 3px 20px; */
     margin: 20px 0;
   }
 `
@@ -72,7 +66,6 @@ const ImagesWrap = styled.div`
   flex-wrap: wrap;
   width: 100%;
   max-width: 500px;
-  /* padding:20px 0; */
 `
 
 const Example = props => {

@@ -1,20 +1,19 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 const Input = styled.input`
-  /* width: ${props => (props.small ? "50%" : "100%")}; */
-  width:100%;
+  width: 100%;
   border: none;
   opacity: 0.65;
   transition: 0.3s;
-  text-overflow:ellipsis;
-  overflow:hidden;
-  background-color:transparent;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  background-color: transparent;
   &:focus {
     border: none;
     opacity: 1;
   }
-  &:invalid{
-      box-shadow:none;
+  &:invalid {
+    box-shadow: none;
   }
 `
 const Label = styled.label`
@@ -39,7 +38,6 @@ const Line = styled.div`
   transition: 0.3s;
   &.active {
     transform: none;
-    /* background-color: ${({ theme }) => theme.color_theme_a} !important; */
   }
   &.error {
     background-color: red;
@@ -50,12 +48,11 @@ const Container = styled.div`
   flex-direction: column;
   align-items: flex-start;
   overflow: hidden;
-  /* width: ${props => (props.small ? "40%" : "100%")}; */
-  width:100%;
+  width: 100%;
   margin: 10px;
-  position:relative;
-  @media(min-width:768px){
-  width: ${props => (props.small ? "40%" : "100%")};
+  position: relative;
+  @media (min-width: 768px) {
+    width: ${props => (props.small ? "40%" : "100%")};
   }
 `
 
@@ -75,9 +72,7 @@ const FullInput = props => {
         name={props.id}
         maxLength={props.max || ""}
         value={props.state[props.id] || ""}
-        // onInput={e => setInputValue(e.target.value)}
         onInput={e => clickEvent(e)}
-        // onChange={e => clickEvent(e)}
         rows={props.rows ?? ""}
       />
       <Line

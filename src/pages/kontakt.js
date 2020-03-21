@@ -52,7 +52,6 @@ const Bold = styled.b`
 `
 const Icon = styled.i`
   font-size: 23px;
-  /* margin-right: 20px; */
   margin: 0 20px 20px 0;
   transition: 0.3s;
   opacity: 0.8;

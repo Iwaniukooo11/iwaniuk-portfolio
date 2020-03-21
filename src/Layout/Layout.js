@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react"
 import Helmet from "react-helmet"
-import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
+import styled, { ThemeProvider } from "styled-components"
 import theme from "../utils/theme"
 import { TransitionPortal } from "gatsby-plugin-transition-link"
+import GlobalStyle from "./GlobalStyle/GlobalStyle"
 
 import Navigation from "../Layout/Nav/Nav"
 import "bootstrap/dist/css/bootstrap.css"
@@ -11,69 +12,7 @@ import LeftCard from "../Components/LeftCard/LeftCard"
 import bg_img from "../assets/icons/big_img.jpg"
 import icon from "../assets/icons/icon.svg"
 
-const GlobalStyle = createGlobalStyle`
-/* @import './Layout.scss'; */
-*,*::after,*::before,h1,h2,h3,h4,p,a,span,button,input,textarea{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    font-size:inherit;
-}
-a{
-  text-decoration:none;
-  color:inherit;
-  font:inherit;
-  outline:none !important;
-}
-a:hover,a:active{
-  text-decoration:none;
-  color:inherit;
-
-}
-body{
-    color:${({ theme }) => theme.color_white};
-    font-family: 'Poppins', sans-serif;
-    font-weight:300;
-    overflow-x:hidden;
-}
-::-webkit-scrollbar {
-    width: 0px;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
-}
-/* Optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
-    /* background: #FF0000; */
-    background: transparent;
-}
-button,input,textarea{
-  outline:none;
-  font:inherit;
-}
-ul{
-  list-style:none;
-}
-@keyframes animation {
-  0% {
-    transform: scale3d(.9);
-    opacity: 0; }
-  20% {
-    opacity: 1; }
-  40% {
-    animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-    transform: scale3d(1.08, 1.08, 1.08); }
-  60% {
-    animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-    transform: scale3d(1, 1, 1); }
-  80% {
-    animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-    transform: scale3d(1.03, 1.03, 1.03); }
-  100% {
-    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transform: scale3d(1, 1, 1); } }
-`
 const Container = styled.main`
-  /* max-width: 540px; */
-
   min-height: 100vh; //!
   padding: 40px 5vw;
   display: grid;
@@ -93,7 +32,6 @@ const Container = styled.main`
     margin-left: 500px;
   }
   @media (min-width: 1400px) {
-    /* margin-left: 750px; */
     margin-left: 750px;
     max-width: 620px;
   }
@@ -112,9 +50,6 @@ const Container = styled.main`
   &.projects {
     grid-template-areas: "header" "desc" "list";
     @media (min-width: 1200px) {
-      /* max-width: 60%; */
-      /* max-width: 100%; */
-      /* width: 100%; */
       max-width: 100%;
     }
     @media (min-width: 1400px) {
@@ -146,17 +81,11 @@ const SVG = styled.div`
 const LoadCard = styled.div`
   width: 100%;
   height: 100%;
-  /* background-image: linear-gradient(
-    to right,
-    ${({ theme }) => theme.color_theme_b},
-    ${({ theme }) => theme.color_theme_b}
-  ); */
-  background-color:${({ theme }) => theme.color_theme_b};
+  background-color: ${({ theme }) => theme.color_theme_b};
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
-  /* transition: 0.3s; */
   transform: translateY(-100%);
   @keyframes goOut {
     from {
@@ -171,7 +100,6 @@ const LoadCard = styled.div`
   }
 
   &.active {
-    /* transform: translateY(-100%); */
     animation: goOut 1.5s both;
   }
 `
@@ -218,27 +146,6 @@ const Progress = styled.div`
   }
 `
 
-// const WhiteCard = styled.div`
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   z-index: 30;
-//   /* background-color: ${({ theme }) => theme.color_white}; */
-//   background-color:${({ theme }) => theme.color_theme_b};
-
-//   @keyframes goOutWhite {
-//     90% {
-//       transform: none;
-//     }
-//     to {
-//       transform: translateY(-100%);
-//     }
-//   }
-//   &.active {
-//     animation: goOutWhite 1s both;
-//   }
-// `
-
 const Layout = props => {
   let historyState = ""
   try {
@@ -250,8 +157,6 @@ const Layout = props => {
     try {
       if (window !== "undefined")
         if (!window.history.state && !isLoad) setIsLoad(true)
-
-      // if (window.history.length == 2 && !isLoad) setIsLoad(true)
 
       console.log(window.history)
     } catch {}
@@ -296,7 +201,6 @@ const Layout = props => {
             property="Nazywam się Mateusz Iwaniuk i zajmuję się webdevem. Mieszkam w Bydgoszczy i tworzę strony internetowe. Jeśli potrzebujesz osoby robiącej strony www - Dobrze trafiłeś."
           />
         </Helmet>
-        {/* <WhiteCard className={isLoad && "active"} /> */}
         <Progress className={isLoad && "active"} />
         <LoadCard className={isLoad && "active"} />
         <SVG />

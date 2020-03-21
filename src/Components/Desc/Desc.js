@@ -10,19 +10,8 @@ const Desc = styled.p.attrs(props => ({
     props.white
       ? ({ theme }) => theme.color_white
       : ({ theme }) => theme.color_dark};
-  /* 
-  @keyframes anim {
-    from {
-      opacity: 0.2;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  animation: anim 1s linear both; */
 
   animation: ${props => (props.animate ? "animation 1s" : null)};
-  /* animation: popIn 1s; */
   @media (min-width: 768px) {
     font-size: 17px;
   }

@@ -6,9 +6,7 @@ import Desc from "../../Components/Desc/Desc"
 
 import Burger from "../Burger/Burger"
 
-const StyledBurger = styled(Burger).attrs(props => ({
-  //   class: props.className,
-}))`
+const StyledBurger = styled(Burger).attrs(props => ({}))`
   position: fixed;
   top: 3%;
   left: 3%;
@@ -55,7 +53,6 @@ const Element = styled.li`
   }
   .active {
     color: ${({ theme }) => theme.color_theme_a};
-    /* font-weight: bold; */
     text-shadow: 1px 0 0 ${({ theme }) => theme.color_theme_a};
   }
 `
@@ -76,10 +73,8 @@ const Navigation = props => {
               <Desc>
                 <AniLink
                   cover
-                  // duration={5}
                   direction="right"
                   bg="#fff"
-                  // bg="#10A4A6"
                   to={`/${el.value}`}
                   activeClassName="active"
                 >
