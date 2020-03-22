@@ -37,7 +37,9 @@ const About = props => {
       <Header animate color={"color_theme_c"}>
         O mnie
       </Header>
-      <Desc animate>{content.content.about.data.desc}</Desc>
+      <Desc hover animate>
+        {content.content.about.data.desc}
+      </Desc>
       <Ul>
         {content.content.about.data.list.map((el, i) => (
           <Li key={el.head}>
