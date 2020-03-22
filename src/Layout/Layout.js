@@ -171,43 +171,51 @@ const Layout = props => {
             xmlns:og="http://ogp.me/ns#"
             style="--ipt-focus-outline-on-base:none; --ipt-focus-outline-on-baseAlt:none;"
           /> */}
-
-          <link
-            href="https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap&subset=latin-ext"
-            rel="stylesheet"
-          />
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css"
-          />
-          <link
-            rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-            integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
-            crossorigin="anonymous"
-          />
-          <meta name="viewport" content="width=device-width,initial-scale=1" />
-          <meta property="og:title" content="Mateusz Iwaniuk Portfolio" />
-          <meta name="author" content="Mateusz Iwaniuk" />
-          {/* <meta name="title" content="Mateusz Iwaniuk Portfolio" /> */}
-          <title>Mateusz Iwaniuk Portfolio</title>
-          <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-          <meta
-            name="description"
-            content="Rozpoczynasz nowy biznes, zakładasz organizację? Pewnie potrzebujesz strony internetowej! W takim razie trafiłeś najlepiej jak mogłeś, bo zajmuję się tym z pasją."
-          />
-          <meta
-            name="keywords"
-            content="Iwaniuk,Trailblazer,Cansat,Mateusz,Programista,Bydgoszcz,Frontend,front-end"
-          />
-          <meta
-            property="og:image"
-            content="http://ia.media-imdb.com/images/rock.jpg"
-          />
-          <meta
-            propety="og:description"
-            property="Rozpoczynasz nowy biznes, zakładasz organizację? Pewnie potrzebujesz strony internetowej! W takim razie trafiłeś najlepiej jak mogłeś, bo zajmuję się tym z pasją."
-          />
+          <head prefix="og: http://ogp.me/ns#">
+            <link
+              href="https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap&subset=latin-ext"
+              rel="stylesheet"
+            />
+            <link
+              rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css"
+            />
+            <link
+              rel="stylesheet"
+              href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+              integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+              crossorigin="anonymous"
+            />
+            <meta
+              name="viewport"
+              content="width=device-width,initial-scale=1"
+            />
+            <meta property="og:title" content="Mateusz Iwaniuk Portfolio" />
+            <meta
+              property="og:image"
+              content="http://ia.media-imdb.com/images/rock.jpg"
+            />
+            <meta
+              propety="og:description"
+              property="Rozpoczynasz nowy biznes, zakładasz organizację? Pewnie potrzebujesz strony internetowej! W takim razie trafiłeś najlepiej jak mogłeś, bo zajmuję się tym z pasją."
+            />
+            <meta property="og:type" content="portfolio.side" />
+            <meta name="author" content="Mateusz Iwaniuk" />
+            {/* <meta name="title" content="Mateusz Iwaniuk Portfolio" /> */}
+            <title>Mateusz Iwaniuk Portfolio</title>
+            <meta
+              http-equiv="content-type"
+              content="text/html; charset=utf-8"
+            />
+            <meta
+              name="description"
+              content="Rozpoczynasz nowy biznes, zakładasz organizację? Pewnie potrzebujesz strony internetowej! W takim razie trafiłeś najlepiej jak mogłeś, bo zajmuję się tym z pasją."
+            />
+            <meta
+              name="keywords"
+              content="Iwaniuk,Trailblazer,Cansat,Mateusz,Programista,Bydgoszcz,Frontend,front-end"
+            />
+          </head>
         </Helmet>
         <Progress className={isLoad && "active"} />
         <LoadCard className={isLoad && "active"} />
