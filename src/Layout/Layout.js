@@ -165,12 +165,12 @@ const Layout = props => {
       <>
         <GlobalStyle />
         <Helmet>
-          {/* <html prefix="og: http://ogp.me/ns#" /> */}
-          <html
-            xmlns:fb="http://www.facebook.com/2008/fbml"
+          <html prefix="og: http://ogp.me/ns#" lang="pl" />
+          {/* <html
+            // xmlns:fb="http://www.facebook.com/2008/fbml"
             xmlns:og="http://ogp.me/ns#"
             style="--ipt-focus-outline-on-base:none; --ipt-focus-outline-on-baseAlt:none;"
-          />
+          /> */}
 
           <link
             href="https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap&subset=latin-ext"
