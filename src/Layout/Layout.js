@@ -202,7 +202,7 @@ const Layout = props => {
           />
           <meta
             property="og:image"
-            content="http://www.devilindivorce.com/wp-content/uploads/2016/07/whatever.jpg"
+            content="http://ia.media-imdb.com/images/rock.jpg"
           />
           <meta
             propety="og:description"
