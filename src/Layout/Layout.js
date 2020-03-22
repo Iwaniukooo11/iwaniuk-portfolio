@@ -194,7 +194,10 @@ const Layout = props => {
             name="keywords"
             content="Iwaniuk,Trailblazer,Cansat,Mateusz,Programista,Bydgoszcz,Frontend,front-end"
           />
-          <meta property="og:image" content="/icons/big_img.jpg" />
+          <meta
+            property="og:image"
+            content="https://drive.google.com/open?id=1Ygal9FWZDJ_O_byI_3QgGjzzCW2UR3fj"
+          />
           <meta
             propety="og:description"
             property="Rozpoczynasz nowy biznes, zakładasz organizację? Pewnie potrzebujesz strony internetowej! W takim razie trafiłeś najlepiej jak mogłeś, bo zajmuję się tym z pasją."
