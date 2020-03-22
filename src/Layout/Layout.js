@@ -164,14 +164,14 @@ const Layout = props => {
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
-        <Helmet>
+        <Helmet prefix="og: http://ogp.me/ns#">
           <html prefix="og: http://ogp.me/ns#" lang="pl" />
           {/* <html
             // xmlns:fb="http://www.facebook.com/2008/fbml"
             xmlns:og="http://ogp.me/ns#"
             style="--ipt-focus-outline-on-base:none; --ipt-focus-outline-on-baseAlt:none;"
           /> */}
-          <head prefix="og: http://ogp.me/ns#" />
+          {/* <head prefix="og: http://ogp.me/ns#"> */}
           <link
             href="https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap&subset=latin-ext"
             rel="stylesheet"
@@ -194,7 +194,7 @@ const Layout = props => {
           />
           <meta
             propety="og:description"
-            property="Rozpoczynasz nowy biznes, zakładasz organizację? Pewnie potrzebujesz strony internetowej! W takim razie trafiłeś najlepiej jak mogłeś, bo zajmuję się tym z pasją."
+            property="OGP-Rozpoczynasz nowy biznes, zakładasz organizację? Pewnie potrzebujesz strony internetowej! W takim razie trafiłeś najlepiej jak mogłeś, bo zajmuję się tym z pasją."
           />
           <meta property="og:type" content="portfolio.side" />
           <meta property="og:url" content="https://iwaniuk-test.netlify.com/" />
@@ -210,6 +210,7 @@ const Layout = props => {
             name="keywords"
             content="Iwaniuk,Trailblazer,Cansat,Mateusz,Programista,Bydgoszcz,Frontend,front-end"
           />
+          {/* </head> */}
         </Helmet>
         <Progress className={isLoad && "active"} />
         <LoadCard className={isLoad && "active"} />
