@@ -196,7 +196,7 @@ const Layout = props => {
           />
           <meta
             property="og:image"
-            content="https://drive.google.com/open?id=1Ygal9FWZDJ_O_byI_3QgGjzzCW2UR3fj"
+            content="http://www.devilindivorce.com/wp-content/uploads/2016/07/whatever.jpg"
           />
           <meta
             propety="og:description"
