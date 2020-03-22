@@ -157,8 +157,6 @@ const Layout = props => {
     try {
       if (window !== "undefined")
         if (!window.history.state && !isLoad) setIsLoad(true)
-
-      console.log(window.history)
     } catch {}
   }, [])
 
@@ -185,20 +183,21 @@ const Layout = props => {
           <meta name="viewport" content="width=device-width,initial-scale=1" />
           <meta property="og:title" content="Mateusz Iwaniuk Portfolio" />
           <meta name="author" content="Mateusz Iwaniuk" />
-          <meta name="title" content="Mateusz Iwaniuk Portfolio" />
+          {/* <meta name="title" content="Mateusz Iwaniuk Portfolio" /> */}
+          <title>Mateusz Iwaniuk Portfolio</title>
           <meta http-equiv="content-type" content="text/html; charset=utf-8" />
           <meta
             name="description"
-            content="Nazywam się Mateusz Iwaniuk i zajmuję się webdevem. Mieszkam w Bydgoszczy i tworzę strony internetowe. Jeśli potrzebujesz osoby robiącej strony www - Dobrze trafiłeś."
+            content="Rozpoczynasz nowy biznes, zakładasz organizację? Pewnie potrzebujesz strony internetowej! W takim razie trafiłeś najlepiej jak mogłeś, bo zajmuję się tym z pasją."
           />
           <meta
             name="keywords"
             content="Iwaniuk,Trailblazer,Cansat,Mateusz,Programista,Bydgoszcz,Frontend,front-end"
           />
-          <meta property="og:image" content="static/big_img.jpg" />
+          <meta property="og:image" content="/icons/big_img.jpg" />
           <meta
             propety="og:description"
-            property="Nazywam się Mateusz Iwaniuk i zajmuję się webdevem. Mieszkam w Bydgoszczy i tworzę strony internetowe. Jeśli potrzebujesz osoby robiącej strony www - Dobrze trafiłeś."
+            property="Rozpoczynasz nowy biznes, zakładasz organizację? Pewnie potrzebujesz strony internetowej! W takim razie trafiłeś najlepiej jak mogłeś, bo zajmuję się tym z pasją."
           />
         </Helmet>
         <Progress className={isLoad && "active"} />
