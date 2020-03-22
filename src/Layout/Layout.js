@@ -165,7 +165,7 @@ const Layout = props => {
       <>
         <GlobalStyle />
         <Helmet prefix="og: http://ogp.me/ns#">
-          <html prefix="og: http://ogp.me/ns#" lang="pl" />
+          {/* <html prefix="og: http://ogp.me/ns#" lang="pl" /> */}
           {/* <html
             // xmlns:fb="http://www.facebook.com/2008/fbml"
             xmlns:og="http://ogp.me/ns#"
