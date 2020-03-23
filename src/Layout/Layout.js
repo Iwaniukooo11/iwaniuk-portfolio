@@ -165,13 +165,19 @@ const Layout = props => {
       <>
         <GlobalStyle />
         <Helmet prefix="og: http://ogp.me/ns#">
-          {/* <html prefix="og: http://ogp.me/ns#" lang="pl" /> */}
-          {/* <html
-            // xmlns:fb="http://www.facebook.com/2008/fbml"
-            xmlns:og="http://ogp.me/ns#"
-            style="--ipt-focus-outline-on-base:none; --ipt-focus-outline-on-baseAlt:none;"
-          /> */}
-          {/* <head prefix="og: http://ogp.me/ns#"> */}
+          <html prefix="og: http://ogp.me/ns#" lang="pl" />
+          <meta property="og:title" content="Mateusz Iwaniuk Portfolio" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="http://www.mateusz-iwaniuk.pl/" />
+          <meta
+            property="og:image"
+            content="http://ia.media-imdb.com/images/rock.jpg"
+          />
+          <meta
+            property="og:description"
+            content="Rozpoczynasz nowy biznes, zakładasz organizację? Pewnie potrzebujesz strony internetowej! W takim razie trafiłeś najlepiej jak mogłeś, bo zajmuję się tym z pasją."
+          />
+
           <link
             href="https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap&subset=latin-ext"
             rel="stylesheet"
@@ -187,17 +193,7 @@ const Layout = props => {
             crossorigin="anonymous"
           />
           <meta name="viewport" content="width=device-width,initial-scale=1" />
-          <meta property="og:title" content="Mateusz Iwaniuk Portfolio" />
-          <meta
-            property="og:image"
-            content="http://ia.media-imdb.com/images/rock.jpg"
-          />
-          <meta
-            propety="og:description"
-            property="OGP-Rozpoczynasz nowy biznes, zakładasz organizację? Pewnie potrzebujesz strony internetowej! W takim razie trafiłeś najlepiej jak mogłeś, bo zajmuję się tym z pasją."
-          />
-          <meta property="og:type" content="portfolio.side" />
-          <meta property="og:url" content="https://iwaniuk-test.netlify.com/" />
+
           <meta name="author" content="Mateusz Iwaniuk" />
           {/* <meta name="title" content="Mateusz Iwaniuk Portfolio" /> */}
           <title>Mateusz Iwaniuk Portfolio</title>

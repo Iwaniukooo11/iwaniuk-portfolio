@@ -2,7 +2,7 @@ export default {
   content: {
     contact: {
       desc:
-        " Zapraszam do kontaktu za pomocą formularza. Postaram się odpowiedzieć bezzwłocznie. Jestem także dostępny pod adresem::",
+        " Zapraszam do kontaktu za pomocą formularza. Postaram się odpowiedzieć bezzwłocznie. Jestem także dostępny pod adresem:",
       data: [
         { key: "lokalizacja", value: "Bydgoszcz, Polska" },
         { key: "e-mail", value: "mateusz.iwaniuk11@gmail.com" },
