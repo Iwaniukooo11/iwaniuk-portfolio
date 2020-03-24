@@ -5,6 +5,7 @@
 - Gatsby
 - Styled Components
 - Bootstrap
+- SMTP.js
 
 ## Description
 
