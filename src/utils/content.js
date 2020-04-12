@@ -22,7 +22,7 @@ export default {
     about: {
       data: {
         desc:
-          "Nazywam się Mateusz Iwaniuk i zajmuję się tworzeniem stron internetowych. Mieszkam w Bydgoszczy i jestem uczniem VILO. Zajmuję się tworzeniem aplikacji webowych od strony front-end'u. Jeśli potrzebujesz nieszablonowej strony www  - dobrze trafiłeś, bo zajmuję się tym z pasją.",
+          "Nazywam się Mateusz Iwaniuk i zajmuję się tworzeniem stron internetowych. Mieszkam w Bydgoszczy i jestem uczniem VILO. Tworzę aplikacje webowe od strony front-end'u. Jeśli potrzebujesz nieszablonowej strony www  - dobrze trafiłeś, bo zajmuję się tym z pasją.",
         list: [
           {
             head: "jestem finalistą konkursu cansat 2020",
@@ -32,7 +32,7 @@ export default {
           {
             head: "piszę artykuły na dev.to",
             desc:
-              "Staram się poszerzać swoją wiedzę na temat pisania kodu oraz dzielić się nią z innymi użytkownikami. Moje artykuły na temat m.in frameworka Svelte oraz Open Graph Protocol można znaleźć na dev.to",
+              "Staram się poszerzać swoją wiedzę na temat pisania kodu oraz dzielić się nią z innymi użytkownikami. Moje artykuły na temat m.in frameworka Svelte można znaleźć na dev.to",
           },
         ],
       },

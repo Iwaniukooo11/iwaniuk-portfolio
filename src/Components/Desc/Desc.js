@@ -3,9 +3,6 @@ import styled from "styled-components"
 const Desc = styled.p.attrs(props => ({
   className: "desc",
 }))`
-  &:hover {
-    cursor: ${props => (props.hover ? "pointer" : null)};
-  }
   font-size: 16px;
   max-width: 630px;
   line-height: 1.7;

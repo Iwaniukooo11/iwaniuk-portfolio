@@ -101,7 +101,7 @@ const Contact = props => {
       emailjs
         .sendForm(
           "gmail",
-          "template_IXjcBTfO",
+          "template_riwnvpNw",
           e.target,
           `${process.env.GATSBY_APP_USER_ID}`
         )

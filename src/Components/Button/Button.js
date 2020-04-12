@@ -25,6 +25,9 @@ const Button = styled(Link)`
   &:disabled {
     opacity: 0.4;
     background-color: #fff;
+    &:hover {
+      cursor: not-allowed;
+    }
   }
   &:hover {
     opacity: 0.9;

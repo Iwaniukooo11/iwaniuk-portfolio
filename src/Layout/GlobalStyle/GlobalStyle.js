@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components"
+import colors from "../../utils/colors"
 
 const Global = createGlobalStyle`
 *,*::after,*::before,h1,h2,h3,h4,p,a,span,button,input,textarea{
@@ -6,6 +7,10 @@ const Global = createGlobalStyle`
     padding:0;
     box-sizing: border-box;
     font-size:inherit;
+}
+::selection{
+  background-color:${colors.color_theme_a};
+  color:${colors.color_white}
 }
 a{
   text-decoration:none;

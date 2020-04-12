@@ -169,13 +169,17 @@ const Layout = props => {
           <meta property="og:title" content="Mateusz Iwaniuk Portfolio" />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="http://www.mateusz-iwaniuk.pl/" />
-          <meta
-            property="og:image"
-            content="http://ia.media-imdb.com/images/rock.jpg"
-          />
+          <meta property="og:image" content="/icons/big_img.jpg" />
+          <meta property="og:image:type" content="image/jpeg" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
           <meta
             property="og:description"
             content="Rozpoczynasz nowy biznes, zakładasz organizację? Pewnie potrzebujesz strony internetowej! W takim razie trafiłeś najlepiej jak mogłeś, bo zajmuję się tym z pasją."
+          />
+          <meta
+            name="google-site-verification"
+            content="2AE5jnBRh2n1fzt6_sVtx3qbFuQ4-XuBRCDqCl903GA"
           />
 
           <link

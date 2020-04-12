@@ -86,6 +86,7 @@ const Example = props => {
           small
           noMargin
           onClick={toggle}
+          hover
         >
           {props.header}
         </Header>

@@ -9,6 +9,10 @@ const Header = styled.h1`
   color: ${props => props.theme[props.color] || props.theme.color_dark};
   animation: ${props => (props.animate ? "animation 1s" : null)};
 
+  &:hover {
+    cursor: ${props => (props.hover ? "pointer" : null)} !important;
+  }
+
   @media (min-width: 960px) {
     font-size: ${props => (props.small ? "26px" : "40px")};
   }
