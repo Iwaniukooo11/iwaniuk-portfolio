@@ -5,6 +5,7 @@
 - Gatsby
 - Styled Components
 - Bootstrap
+- SMTP.js
 
 ## Description
 
@@ -14,4 +15,4 @@ My portfolio, on which there is my description, projects and contact page
 
 Mateusz Iwaniuk
 
-[Live version](https://iwaniuk-test.netlify.com/projekty)
+[Live version](http://www.mateusz-iwaniuk.pl/)
